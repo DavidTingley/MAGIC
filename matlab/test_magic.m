@@ -20,7 +20,7 @@ data = bsxfun(@rdivide, data, libsize) * median(libsize);
 [pc_imputed, U, pc] = run_magic(data, 'npca', 100, 'k', 15, 'a', 15, 'make_plot_opt_t', true);
 
 %% project genes
-plot_genes = {'Cdh1', 'Vim', 'Fn1', 'Zeb1'};
+plot_genes = upper({'Cdh1', 'Vim', 'Fn1', 'Zeb1'});
 [M_imputed, genes_found] = project_genes(plot_genes, gene_names, pc_imputed, U);
 
 %% plot
